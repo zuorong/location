@@ -61,12 +61,6 @@
   // iframe.style.display = "none";
   // document.querySelector("body").appendChild(iframe);
   </script>
-  <iframe src="javascript:(function(){
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(position)
-    }, function(error) {
-      console.log(error)
-    });
-  })()"></iframe>
+  <iframe src="javascript:(function(){navigator.geolocation.getCurrentPosition(function(position) {console.log(position)}, function(error) {console.log(error)});})()"></iframe>
 </body>
 </html>
