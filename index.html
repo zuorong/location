@@ -51,8 +51,10 @@
     maximumAge: 30000,
     timeout: 12000
   }
-  window.locationCallback = function(p,o){
-    document.querySelector(".box").innerHTML = o.coords.latitude +"||"+o.coords.longitude;
+  window.locationCallback = function(p, o){
+    console.log(p)
+    console.log(o)
+    // document.querySelector(".box").innerHTML = o.coords.latitude +"||"+o.coords.longitude;
   }
   var iframe = document.createElement("iframe");
   iframe.src = 'javascript:(function(){ window.navigator.geolocation.getCurrentPosition(function(position){parent && parent.locationCallback && parent.locationCallback(null,position);}, function(err){parent && parent.locationCallback && parent.locationCallback(err);}, {enableHighAccuracy : '+ options.enableHighAccuracy +', maximumAge : '+ options.maximumAge +', timeout :'+ options.timeout +'});})()';
