@@ -11,6 +11,7 @@
   <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
   <script>
     var x = document.querySelector(".demo")
+    let g = '7777'
     x.addEventListener('click', getLocation, false)
     function getLocation(){
       if (navigator.geolocation)
@@ -24,6 +25,7 @@
     }
     let r = 444
     let b = 'meg'
+    let c = 8;
     function showPosition(position) {
       x.innerHTML="纬度: " + position.coords.latitude + 
       "<br>经度: " + position.coords.longitude;	
