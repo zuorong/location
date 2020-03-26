@@ -6,10 +6,13 @@
   <title>Document</title>
 </head>
 <body>
+  3335
+  steven
   <div class="box"></div>
   <button class="demo">demo</button>
   <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
   <script>
+    let a = 'steven'
     var x = document.querySelector(".demo")
     x.addEventListener('click', getLocation, false)
     function getLocation(){
@@ -22,7 +25,8 @@
         x.innerHTML="该浏览器不支持定位。";
       }
     }
-    let g = 333
+    let g = 333;
+    let r = 444
     function showPosition(position) {
       x.innerHTML="纬度: " + position.coords.latitude + 
       "<br>经度: " + position.coords.longitude;	
