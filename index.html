@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,69 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
-    #allmap{
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
-  <div class="x"></div>
-  <div id="allmap"></div>
-  <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
-  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E4805d16520de693a3fe707cdc962045"></script>
-  <script>
-    let x = document.querySelector('.x')
-    var map = new BMap.Map("allmap");
-    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-    // var p1 = new BMap.Point(116.301934,39.977552);
-    // var p2 = new BMap.Point(116.508328,39.919141);
-    // var driving = new BMap.WalkingRoute(map, {renderOptions:{map: map,
-    // autoViewport: true}});
-    // driving.search(p1, p2)
-    // WalkingRoute 步行 TransitRoute 公交 DrivingRoute 驾车
-
-
-    let p1 = new BMap.Point(113.308571, 23.045015);
-    let options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    }
-    navigator.geolocation.watchPosition(showPosition, showError, options)
-    // watchPosition
-    // getCurrentPosition
-    function showPosition(position) {
-      let latitude = position.coords.latitude // 纬度
-      let longitude = position.coords.longitude // 经度
-      // console.log(latitude)
-      x.innerHTML = latitude + '||||' + longitude
-      
-      let p2 = new BMap.Point(longitude, latitude)
-      let driving = new BMap.WalkingRoute(map, {renderOptions:{map: map,
-      autoViewport: true}})
-      driving.search(p1, p2)
-    }
-    function showError(error) {
-      switch(error.code) {
-        case error.PERMISSION_DENIED:
-          x.innerHTML="User denied the request for Geolocation."
-          break;
-        case error.POSITION_UNAVAILABLE:
-          x.innerHTML="Location information is unavailable."
-          break;
-        case error.TIMEOUT:
-          x.innerHTML="The request to get user location timed out."
-          break;
-        case error.UNKNOWN_ERROR:
-          x.innerHTML="An unknown error occurred."
-          break;
-      }
-    }
-    var vConsole = new VConsole();
-  </script>
+  323
 </body>
 </html>
